@@ -5,7 +5,7 @@ plugins {
     id("dagger.hilt.android.plugin")
     id("androidx.navigation.safeargs")
 }
-
+apply plugin: 'kotlin-android-extensions'
 
 
 android {
@@ -40,8 +40,8 @@ android {
 dependencies {
 
     def room_version = "2.3.0"
-    def navigation_version = "2.3.5"
-    def hilt_version = "1.0.0"
+    def nav_version = "2.3.5"
+    def hilt_version = "2.35"
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.6.0'
@@ -53,12 +53,12 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     //Hilt
-    implementation "com.google.dagger:hilt-android:$hilt_version"
+    implementation("com.google.dagger:hilt-android:$hilt_version")
     kapt("com.google.dagger:hilt-android-compiler:$hilt_version")
 
     //navigation
-    implementation("androidx.navigation:navigation-fragment-ktx:$navigation_version")
-    implementation("androidx.navigation:navigation-ui-ktx: $navigation_version")
+    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
+    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
 
     //room
     implementation("androidx.room:room-runtime:$room_version")
