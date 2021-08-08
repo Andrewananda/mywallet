@@ -5,7 +5,8 @@ import androidx.room.RoomDatabase
 import com.devstart.mywallet.data.dao.*
 import com.devstart.mywallet.data.model.*
 
-@Database(entities = [User::class, Income::class, Expenditure::class, Balance::class, Transaction::class], version = 1)
+@Database(entities = [User::class, Income::class, Expenditure::class, Balance::class,
+    Transaction::class], version = 1)
 abstract class WalletDatabase : RoomDatabase(){
     abstract fun userDao() : UserDao
     abstract fun incomeDao() : IncomeDao
