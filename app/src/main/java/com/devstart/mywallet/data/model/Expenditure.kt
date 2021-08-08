@@ -5,7 +5,7 @@ import java.sql.Date
 
 @Entity(tableName = "expenditures")
 data class Expenditure(
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     val id: Int,
     @Embedded val userId: User,
     @Relation(parentColumn = "userId", entityColumn = "user_id")

@@ -7,7 +7,7 @@ import java.sql.Date
 
 @Entity(tableName = "balances")
 data class Balance(
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     val id: Int,
     @ColumnInfo(name = "amount") val amount: Int,
     @ColumnInfo(name = "date") val date: Date
