@@ -10,7 +10,6 @@ import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.collect
 import javax.inject.Inject
 
-@HiltViewModel
 class SignInViewModel @Inject constructor(private val signInRepository: SignInRepository): ViewModel() {
     private val mutableUserResponse = MutableLiveData<Response>()
     fun userResponse() : LiveData<Response> = mutableUserResponse
