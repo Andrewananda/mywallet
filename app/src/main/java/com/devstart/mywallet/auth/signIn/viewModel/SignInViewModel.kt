@@ -14,12 +14,12 @@ class SignInViewModel @Inject constructor(private val signInRepository: SignInRe
     private val mutableUserResponse = MutableLiveData<Response>()
     fun userResponse() : LiveData<Response> = mutableUserResponse
 
-    private val coroutineScope = CoroutineScope(Dispatchers.Main + SupervisorJob())
+    private val coroutineScope = CoroutineScope(Dispatchers.IO + SupervisorJob())
 
     fun loginUser(email: String, password: String) {
         coroutineScope.launch {
             signInRepository.signInUser(email, password).collect {
-                mutableUserResponse.value = it
+                mutableUserResponse.postValue(it)
             }
         }
     }
