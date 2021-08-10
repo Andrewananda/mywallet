@@ -6,6 +6,9 @@ import android.util.Log
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import com.devstart.mywallet.auth.signIn.viewModel.SignInViewModel
+import com.devstart.mywallet.data.Failure
+import com.devstart.mywallet.data.Success
+import com.devstart.mywallet.data.model.User
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -28,7 +31,22 @@ class MainActivity : AppCompatActivity() {
 
     private fun observeSignInResponse() {
         viewModel.userResponse().observe(this, Observer {
-            Log.i("LoginResponse", it.toString())
+            when(it) {
+                is Failure -> {
+                    Log.i("ErrorLoggingIn", it.throwable.toString())
+                }
+                is Success<*> -> {
+                    if (it.data === null) {
+                        Log.i("UserNotFound","User record not found")
+                    }else {
+                        Log.i("userData", "User Available")
+                    }
+                }
+            }
         })
+    }
+
+    private fun loadSuccess(user: User) {
+        Log.i("userData", "User Available")
     }
 }

@@ -8,8 +8,8 @@ import com.devstart.mywallet.data.model.Balance
 @Dao
 interface BalanceDao{
     @Insert
-    fun insert(vararg balance: Balance): Balance
+    fun insert(balance: Balance)
 
     @Update
-    fun updateBalance(vararg balance: Balance):Balance
+    fun updateBalance(balance: Balance)
 }

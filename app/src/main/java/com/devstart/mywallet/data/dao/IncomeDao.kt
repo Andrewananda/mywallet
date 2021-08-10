@@ -8,8 +8,8 @@ import com.devstart.mywallet.data.model.Income
 @Dao
 interface IncomeDao {
     @Insert
-    fun insert(vararg income: Income): Income
+    fun insert(income: Income)
 
     @Update
-    fun update(vararg income: Income): Income
+    fun update(income: Income)
 }

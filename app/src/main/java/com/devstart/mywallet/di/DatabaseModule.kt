@@ -15,43 +15,42 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 
 object DatabaseModule {
-    @Provides
     @Singleton
+    @Provides
     fun provideUserDao(appDatabase: WalletDatabase) : UserDao {
         return appDatabase.userDao()
     }
 
-    @Provides
     @Singleton
+    @Provides
     fun provideBalanceDao(appDatabase: WalletDatabase) : BalanceDao {
         return appDatabase.balanceDao()
     }
 
-    @Provides
     @Singleton
+    @Provides
     fun provideExpenditureDao(appDatabase: WalletDatabase): ExpenditureDao{
         return appDatabase.expenditureDao()
     }
-
-    @Provides
     @Singleton
+    @Provides
     fun provideIncomeDao(appDatabase: WalletDatabase): IncomeDao {
         return appDatabase.incomeDao()
     }
 
-    @Provides
     @Singleton
+    @Provides
     fun provideTransactionDao(appDatabase: WalletDatabase): TransactionDao {
         return appDatabase.transactionDao()
     }
 
-    @Provides
     @Singleton
+    @Provides
     fun provideAppDatabase(@ApplicationContext appContext: Context) : WalletDatabase {
         return Room.databaseBuilder(
             appContext,
             WalletDatabase::class.java,
             "wallet"
-        ).build()
+        ).fallbackToDestructiveMigration().build()
     }
 }

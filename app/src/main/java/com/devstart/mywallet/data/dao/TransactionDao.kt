@@ -8,7 +8,7 @@ import com.devstart.mywallet.data.model.Transaction
 @Dao
 interface TransactionDao {
     @Insert
-    fun insert(vararg transaction: Transaction)
+    fun insert(transaction: Transaction)
 
     @Query("SELECT * FROM transactions")
     fun allTransactions(): List<Transaction>
