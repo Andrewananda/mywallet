@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.devstart.mywallet.MainActivity
 import com.devstart.mywallet.R
+import com.devstart.mywallet.prefs
 
 class SplashScreenFragment : Fragment() {
 
@@ -36,10 +37,7 @@ class SplashScreenFragment : Fragment() {
 
 
     private fun userExist(): Boolean {
-        val sharedPreferences: SharedPreferences =
-            (this.activity?.getSharedPreferences("user", Context.MODE_PRIVATE) ?: null) as SharedPreferences
-        val user = sharedPreferences.getString("user", "")
-        Log.i("USER", user.toString())
+        val user = prefs.userPref
         return !user.equals("")
     }
 }
