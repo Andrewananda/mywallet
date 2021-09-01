@@ -33,7 +33,8 @@ class MainActivity : AppCompatActivity() {
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             if (destination.id in arrayOf(
-                    R.id.splashScreenFragment
+                    R.id.splashScreenFragment,
+                    R.id.signUpFragment
             )){
                 val appBar: ActionBar? = supportActionBar;
                 appBar?.hide()
