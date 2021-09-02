@@ -45,10 +45,10 @@ class SignInFragment : Fragment() {
 
     private fun signIn() {
         when{
-            binding.txtEmail.toString().trim().isEmpty() -> {
+            binding.txtEmail.text?.trim().toString().isEmpty() -> {
                 binding.emailLayout.error = "Email field is required"
             }
-            binding.txtPassword.toString().trim().isEmpty() -> {
+            binding.txtPassword.text?.trim().toString().isEmpty() -> {
                 binding.passwordLayout.error = "Password field is required"
             }
             else -> {

@@ -41,20 +41,20 @@ class SignUpFragment : Fragment() {
 
 
     private fun signUpUser() {
-        val firstname = binding.firstName.text.toString()
-        val lastname = binding.txtLastName.text.toString()
-        val email = binding.txtEmail.text.toString()
+        val firstname = binding.firstName.text?.trim().toString()
+        val lastname = binding.txtLastName.text?.trim().toString()
+        val email = binding.txtEmail.text?.trim().toString()
         val password = binding.txtPassword.text?.trim().toString()
         val passwordConfirm = binding.txtPasswordConfirm.text?.trim().toString()
 
         when {
-            firstname.trim().isEmpty() -> {
+            firstname.isEmpty() -> {
                 binding.firstName.error = "First name is required"
             }
-            lastname.trim().isEmpty() -> {
+            lastname.isEmpty() -> {
                 binding.txtLastName.error = "Last name is required"
             }
-            email.trim().isEmpty() -> {
+            email.isEmpty() -> {
                 binding.txtEmail.error = "Email is required"
             }
             password.isEmpty() -> {
