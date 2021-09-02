@@ -43,6 +43,7 @@
         app:layout_constraintTop_toBottomOf="@+id/welcomeDesc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:errorEnabled="true"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txt_email"
@@ -50,7 +51,7 @@
             android:layout_height="match_parent"
             android:hint="@string/enter_email"
             android:imeOptions="actionNext"
-            android:inputType="textPassword"
+            android:inputType="textEmailAddress"
             android:nextFocusDown="@id/txt_password" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -65,6 +66,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:boxStrokeColor="@color/color_primary"
         app:hintTextColor="@color/color_primary"
+        app:errorEnabled="true"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:layout_constraintTop_toBottomOf="@id/email_layout">
 

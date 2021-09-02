@@ -1,5 +1,6 @@
 package com.devstart.mywallet.auth.signIn.viewModel
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -17,6 +18,8 @@ class SignInViewModel @Inject constructor(private val signInRepository: SignInRe
     private val coroutineScope = CoroutineScope(Dispatchers.IO + SupervisorJob())
 
     fun loginUser(email: String, password: String) {
+        Log.i("Email" , email)
+        Log.i("Password", password)
         coroutineScope.launch {
             signInRepository.signInUser(email, password).collect {
                 mutableUserResponse.postValue(it)

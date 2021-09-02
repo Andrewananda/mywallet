@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.devstart.mywallet.R
@@ -28,7 +27,6 @@ class SignUpFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         binding = FragmentSignUpBinding.inflate(layoutInflater, container, false)
         binding.txtSignin.setOnClickListener {
             findNavController().navigate(R.id.action_signUpFragment_to_signInFragment)
@@ -61,6 +59,10 @@ class SignUpFragment : Fragment() {
             }
             password.trim().isEmpty() -> {
                 binding.txtPassword.error = "Password is required"
+            }
+            password.trim() !== passwordConfirm.trim() -> {
+                binding.txtPassword.error = "Password do not match"
+                binding.txtPasswordConfirm.error = "Password do not match"
             }
             else -> {
                 viewModel.signUp(firstname, lastname, email, password)
