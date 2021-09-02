@@ -17,6 +17,7 @@ import com.devstart.mywallet.data.Success
 import com.devstart.mywallet.data.model.User
 import com.devstart.mywallet.databinding.FragmentSignInBinding
 import com.devstart.mywallet.databinding.FragmentSignUpBinding
+import com.devstart.mywallet.prefs
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -67,6 +68,8 @@ class SignInFragment : Fragment() {
                 is Success<*> -> {
                     if (it.data != null){
                         logSuccess(it.data as User)
+                    }else {
+                        Toast.makeText(context, "Account does not exist", Toast.LENGTH_LONG).show()
                     }
                 }
                 is Failure -> {
@@ -77,7 +80,7 @@ class SignInFragment : Fragment() {
     }
 
     private fun logSuccess(data: User) {
-        Toast.makeText(context, "Success ${data.email}", Toast.LENGTH_LONG).show()
+        prefs.userPref = data.toString()
         findNavController().navigate(R.id.action_signInFragment_to_dashboardFragment)
     }
 }
