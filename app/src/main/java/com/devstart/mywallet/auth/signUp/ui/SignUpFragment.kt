@@ -44,8 +44,8 @@ class SignUpFragment : Fragment() {
         val firstname = binding.firstName.text.toString()
         val lastname = binding.txtLastName.text.toString()
         val email = binding.txtEmail.text.toString()
-        val password = binding.txtPassword.text.toString()
-        val passwordConfirm = binding.txtPasswordConfirm.text.toString()
+        val password = binding.txtPassword.text?.trim().toString()
+        val passwordConfirm = binding.txtPasswordConfirm.text?.trim().toString()
 
         when {
             firstname.trim().isEmpty() -> {
@@ -57,16 +57,18 @@ class SignUpFragment : Fragment() {
             email.trim().isEmpty() -> {
                 binding.txtEmail.error = "Email is required"
             }
-            password.trim().isEmpty() -> {
+            password.isEmpty() -> {
                 binding.txtPassword.error = "Password is required"
             }
-            password.trim() !== passwordConfirm.trim() -> {
-                binding.txtPassword.error = "Password do not match"
-                binding.txtPasswordConfirm.error = "Password do not match"
-            }
+
             else -> {
-                viewModel.signUp(firstname, lastname, email, password)
-                observeSignUpResponse()
+                if (password == passwordConfirm) {
+                    viewModel.signUp(firstname, lastname, email, password)
+                    observeSignUpResponse()
+                }else {
+                    binding.txtPassword.error = "Password do not match"
+                    binding.txtPasswordConfirm.error = "Password do not match"
+                }
             }
         }
     }
