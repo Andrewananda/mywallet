@@ -29,10 +29,6 @@ class SignInFragment : Fragment() {
     @Inject
     lateinit var viewModel: SignInViewModel
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

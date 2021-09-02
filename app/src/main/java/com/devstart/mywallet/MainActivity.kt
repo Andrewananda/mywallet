@@ -41,8 +41,14 @@ class MainActivity : AppCompatActivity() {
                 appBar?.hide()
                 findViewById<BottomNavigationView>(R.id.bottom_nav).visibility = View.GONE
             }else{
-                val appBar: ActionBar? = supportActionBar;
-                appBar?.show()
+                if(destination.id in arrayOf(R.id.dashboardFragment)){
+                    val appBar: ActionBar? = supportActionBar
+                    appBar?.hide()
+                }else{
+                    val appBar: ActionBar? = supportActionBar;
+                    appBar?.show()
+                }
+                findViewById<BottomNavigationView>(R.id.bottom_nav).visibility = View.VISIBLE
             }
         }
     }
