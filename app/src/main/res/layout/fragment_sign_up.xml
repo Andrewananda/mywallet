@@ -45,10 +45,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:boxStrokeColor="@color/color_primary"
         app:hintTextColor="@color/color_primary"
+        app:errorEnabled="true"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:layout_constraintTop_toBottomOf="@id/create_account_desc">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/first_name"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="@string/enter_first_name"
@@ -63,12 +65,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:boxStrokeColor="@color/color_primary"
         app:hintTextColor="@color/color_primary"
+        app:errorEnabled="true"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:layout_constraintTop_toBottomOf="@id/first_name_layout">
 
@@ -79,7 +82,7 @@
             android:hint="@string/enter_last_name"
             android:imeOptions="actionNext"
             android:nextFocusDown="@id/txt_email"
-            android:inputType="textEmailAddress"
+            android:inputType="text"
             />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -88,12 +91,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:boxStrokeColor="@color/color_primary"
         app:hintTextColor="@color/color_primary"
+        app:errorEnabled="true"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:layout_constraintTop_toBottomOf="@id/last_name_layout">
 
@@ -103,7 +107,7 @@
             android:layout_height="match_parent"
             android:hint="@string/enter_email"
             android:imeOptions="actionNext"
-            android:inputType="textPassword"
+            android:inputType="textEmailAddress"
             android:nextFocusDown="@id/txt_password" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -112,12 +116,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:boxStrokeColor="@color/color_primary"
         app:hintTextColor="@color/color_primary"
+        app:errorEnabled="true"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:layout_constraintTop_toBottomOf="@id/email_layout">
 
@@ -138,7 +143,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

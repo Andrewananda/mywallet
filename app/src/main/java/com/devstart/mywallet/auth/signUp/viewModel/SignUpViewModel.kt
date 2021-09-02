@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import com.devstart.mywallet.auth.signUp.repository.SignUpRepository
 import com.devstart.mywallet.data.Response
 import com.devstart.mywallet.data.model.User
+import dagger.hilt.android.scopes.ViewModelScoped
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.collect
 import javax.inject.Inject
