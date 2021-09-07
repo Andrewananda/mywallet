@@ -32,20 +32,18 @@ class MainActivity : AppCompatActivity() {
         findViewById<BottomNavigationView>(R.id.bottom_nav)
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
+            val appBar: ActionBar? = supportActionBar;
             if (destination.id in arrayOf(
                     R.id.splashScreenFragment,
                     R.id.signUpFragment,
                     R.id.signInFragment
             )){
-                val appBar: ActionBar? = supportActionBar;
                 appBar?.hide()
                 findViewById<BottomNavigationView>(R.id.bottom_nav).visibility = View.GONE
             }else{
                 if(destination.id in arrayOf(R.id.dashboardFragment)){
-                    val appBar: ActionBar? = supportActionBar
-                    appBar?.hide()
+                    appBar?.show()
                 }else{
-                    val appBar: ActionBar? = supportActionBar;
                     appBar?.show()
                 }
                 findViewById<BottomNavigationView>(R.id.bottom_nav).visibility = View.VISIBLE
