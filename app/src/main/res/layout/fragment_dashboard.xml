@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".dashboard.DashboardFragment"
+    tools:context=".dashboard.view.DashboardFragment"
     >
 
     <androidx.appcompat.widget.Toolbar
@@ -92,6 +92,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintTop_toBottomOf="@id/all_transactions_text"
         tools:itemCount="10"
         tools:listitem="@layout/recent_item"

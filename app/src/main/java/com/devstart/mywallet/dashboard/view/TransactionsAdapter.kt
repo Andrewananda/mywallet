@@ -1,4 +1,4 @@
-package com.devstart.mywallet.dashboard
+package com.devstart.mywallet.dashboard.view
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.devstart.mywallet.data.model.Transaction
 import com.devstart.mywallet.databinding.RecentItemBinding
 
-class TransactionsAdapter : ListAdapter<Transaction, TransactionsAdapter.TransactionViewHolder>(TransactionDiffUtil) {
+class TransactionsAdapter : ListAdapter<Transaction, TransactionsAdapter.TransactionViewHolder>(
+    TransactionDiffUtil
+) {
 
     inner class TransactionViewHolder(private val binding: RecentItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(transaction: Transaction) {
