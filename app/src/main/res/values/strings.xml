@@ -22,4 +22,5 @@
     <string name="fab">fab</string>
     <string name="txt_account_balance">Account Balance</string>
     <string name="txt_dummy_amount">Kes 15,000</string>
+    <string name="txt_empty_transaction">No transactions available</string>
 </resources>

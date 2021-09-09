@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import com.devstart.mywallet.R
 import com.devstart.mywallet.dashboard.viewModel.TransactionViewModel
 import com.devstart.mywallet.data.Failure
 import com.devstart.mywallet.data.Success
@@ -62,7 +63,9 @@ class DashboardFragment : Fragment() {
         if (!data.isNullOrEmpty()) {
             adapter.submitList(data)
         }else{
-            Log.i("EmptyTransactionsList", "Empty transactions list")
+            binding.txtMessage.visibility = View.VISIBLE
+            binding.recyclerview.visibility = View.GONE
+            binding.txtMessage.text = getString(R.string.txt_empty_transaction)
         }
     }
 
