@@ -5,7 +5,7 @@
 <!--        <item name="actionBarSize">150dip</item>-->
         <!-- Primary brand color. -->
         <item name="colorPrimary">#00455F</item>
-        <item name="colorPrimaryVariant">#005064</item>
+        <item name="colorPrimaryVariant">#00455F</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">#FFAB00</item>

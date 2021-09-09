@@ -42,6 +42,7 @@ class MainActivity : AppCompatActivity() {
                 findViewById<BottomNavigationView>(R.id.bottom_nav).visibility = View.GONE
             }else{
                 if(destination.id in arrayOf(R.id.dashboardFragment)){
+                    appBar?.elevation = 0F
                     appBar?.show()
                 }else{
                     appBar?.show()
