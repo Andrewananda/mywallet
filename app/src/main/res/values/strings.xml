@@ -32,4 +32,9 @@
     <string name="txt_home">Home</string>
     <string name="txt_expenditure">Expenditure</string>
     <string name="txt_profile">Profile</string>
+    <string name="enter_amount">Enter amount</string>
+    <string name="add_expenditure">Add Expenditure</string>
+    <string name="expenditure">Expenditure</string>
+    <string name="enter_expenditure_description">Enter expenditure description</string>
+    <string name="submit">Submit</string>
 </resources>
