@@ -1,13 +1,11 @@
 package com.devstart.mywallet.dashboard.view
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import com.devstart.mywallet.R
-import com.devstart.mywallet.dashboard.viewModel.TransactionViewModel
 import com.devstart.mywallet.data.model.User
 import com.devstart.mywallet.databinding.FragmentPasswordBinding
 import com.devstart.mywallet.prefs
