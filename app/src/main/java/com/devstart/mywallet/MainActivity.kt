@@ -11,6 +11,7 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.setupActionBarWithNavController
 import com.devstart.mywallet.auth.signIn.viewModel.SignInViewModel
 import com.devstart.mywallet.auth.signUp.viewModel.SignUpViewModel
 import com.devstart.mywallet.data.Failure
@@ -50,6 +51,9 @@ class MainActivity : AppCompatActivity() {
                 findViewById<BottomNavigationView>(R.id.bottom_nav).visibility = View.VISIBLE
             }
         }
+
+        val actionBarConfig = AppBarConfiguration(setOf(R.id.dashboardFragment, R.id.signInFragment, R.id.signUpFragment))
+        setupActionBarWithNavController(navController, actionBarConfig)
     }
 
     override fun onSupportNavigateUp(): Boolean {

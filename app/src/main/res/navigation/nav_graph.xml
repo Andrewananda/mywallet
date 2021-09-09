@@ -9,7 +9,7 @@
     <fragment
         android:id="@+id/signInFragment"
         android:name="com.devstart.mywallet.auth.signIn.ui.SignInFragment"
-        android:label="fragment_sign_in"
+        android:label="SignIn"
         tools:layout="@layout/fragment_sign_in" >
         <action
             android:id="@+id/action_signInFragment_to_signUpFragment"
@@ -23,7 +23,7 @@
     <fragment
         android:id="@+id/signUpFragment"
         android:name="com.devstart.mywallet.auth.signUp.ui.SignUpFragment"
-        android:label="fragment_sign_up"
+        android:label="SignUp"
         tools:layout="@layout/fragment_sign_up" >
         <action
             android:id="@+id/action_signUpFragment_to_signInFragment"
@@ -58,7 +58,7 @@
     <fragment
         android:id="@+id/dashboardFragment"
         android:name="com.devstart.mywallet.dashboard.view.DashboardFragment"
-        android:label="fragment_dashboard"
+        android:label="Dashboard"
         tools:layout="@layout/fragment_dashboard" >
         <action
             android:id="@+id/action_dashboardFragment_to_passwordFragment"
@@ -75,7 +75,7 @@
     <fragment
         android:id="@+id/expenditureFragment"
         android:name="com.devstart.mywallet.expenditure.ui.ExpenditureFragment"
-        android:label="fragment_expenditure"
+        android:label="Expenditure"
         tools:layout="@layout/fragment_expenditure" >
         <action
             android:id="@+id/action_expenditureFragment_to_dashboardFragment"
