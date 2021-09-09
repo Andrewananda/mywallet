@@ -20,4 +20,6 @@
     <string name="show_balance">Show balance</string>
     <string name="recent_transactions">Recent Transactions</string>
     <string name="fab">fab</string>
+    <string name="txt_account_balance">Account Balance</string>
+    <string name="txt_dummy_amount">Kes 15,000</string>
 </resources>
