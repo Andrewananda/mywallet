@@ -22,7 +22,6 @@ class DashboardFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentDashboardBinding.inflate(layoutInflater, container, false)
-//        (activity as AppCompatActivity?)!!.setSupportActionBar(binding.toolbar)
 
 
         return binding.root
