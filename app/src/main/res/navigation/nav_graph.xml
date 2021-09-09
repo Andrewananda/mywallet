@@ -63,10 +63,22 @@
         <action
             android:id="@+id/action_dashboardFragment_to_passwordFragment"
             app:destination="@id/passwordFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_expenditureFragment"
+            app:destination="@id/expenditureFragment" />
     </fragment>
     <dialog
         android:id="@+id/passwordFragment"
         android:name="com.devstart.mywallet.dashboard.view.PasswordFragment"
         android:label="fragment_password"
         tools:layout="@layout/fragment_password" />
+    <fragment
+        android:id="@+id/expenditureFragment"
+        android:name="com.devstart.mywallet.expenditure.ui.ExpenditureFragment"
+        android:label="fragment_expenditure"
+        tools:layout="@layout/fragment_expenditure" >
+        <action
+            android:id="@+id/action_expenditureFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+    </fragment>
 </navigation>

@@ -52,6 +52,10 @@ class DashboardFragment : Fragment() {
             findNavController().navigate(R.id.action_dashboardFragment_to_passwordFragment)
         }
 
+        binding.fab.setOnClickListener {
+            findNavController().navigate(R.id.action_dashboardFragment_to_expenditureFragment)
+        }
+
         sharedViewModel.showPassword.observe(viewLifecycleOwner, Observer {
             if (it){
                 binding.txtBalance.show()
