@@ -43,6 +43,7 @@ class PasswordFragment : BottomSheetDialogFragment() {
 
             if (user.password == password){
                 sharedViewModel.shouldShow(true)
+                dismiss()
             }else{
                 binding.passwordLayout.error = getString(R.string.wrong_password)
             }
