@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.devstart.mywallet.R
 import com.devstart.mywallet.dashboard.viewModel.TransactionViewModel
 import com.devstart.mywallet.data.Failure
@@ -41,8 +42,9 @@ class DashboardFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnShowBalance.setOnClickListener {
-            binding.txtBalance.visibility = View.VISIBLE
-            binding.btnShowBalance.visibility = View.GONE
+//            binding.txtBalance.visibility = View.VISIBLE
+//            binding.btnShowBalance.visibility = View.GONE
+            findNavController().navigate(R.id.action_dashboardFragment_to_passwordFragment)
         }
     }
 

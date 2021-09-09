@@ -59,5 +59,14 @@
         android:id="@+id/dashboardFragment"
         android:name="com.devstart.mywallet.dashboard.view.DashboardFragment"
         android:label="fragment_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_dashboardFragment_to_passwordFragment"
+            app:destination="@id/passwordFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/passwordFragment"
+        android:name="com.devstart.mywallet.dashboard.view.PasswordFragment"
+        android:label="fragment_password"
+        tools:layout="@layout/fragment_password" />
 </navigation>
