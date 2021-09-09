@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.devstart.mywallet.R
 import com.devstart.mywallet.dashboard.view.SharedViewModel
 import com.devstart.mywallet.data.Failure
@@ -70,6 +71,7 @@ class ExpenditureFragment : Fragment() {
             when(it) {
                 is Success<*> -> {
                     Toast.makeText(context, "Added successfully", Toast.LENGTH_LONG).show()
+                    findNavController().navigate(R.id.action_expenditureFragment_to_dashboardFragment)
                 }
                 is Failure -> {
                     Log.i("ERROR", it.throwable.toString())
