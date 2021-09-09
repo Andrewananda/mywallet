@@ -15,6 +15,8 @@ import com.devstart.mywallet.data.Failure
 import com.devstart.mywallet.data.Success
 import com.devstart.mywallet.data.model.Transaction
 import com.devstart.mywallet.databinding.FragmentDashboardBinding
+import com.devstart.mywallet.utils.hide
+import com.devstart.mywallet.utils.show
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -52,8 +54,8 @@ class DashboardFragment : Fragment() {
 
         sharedViewModel.showPassword.observe(viewLifecycleOwner, Observer {
             if (it){
-                binding.txtBalance.visibility = View.VISIBLE
-                binding.btnShowBalance.visibility = View.GONE
+                binding.txtBalance.show()
+                binding.btnShowBalance.hide()
             }
         })
     }
@@ -75,8 +77,8 @@ class DashboardFragment : Fragment() {
         if (!data.isNullOrEmpty()) {
             adapter.submitList(data)
         }else{
-            binding.txtMessage.visibility = View.VISIBLE
-            binding.recyclerview.visibility = View.GONE
+            binding.txtMessage.show()
+            binding.recyclerview.hide()
             binding.txtMessage.text = getString(R.string.txt_empty_transaction)
         }
     }

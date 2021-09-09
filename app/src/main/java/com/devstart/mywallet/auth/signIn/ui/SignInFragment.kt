@@ -47,10 +47,10 @@ class SignInFragment : Fragment() {
     private fun signIn() {
         when{
             binding.txtEmail.text?.trim().toString().isEmpty() -> {
-                binding.emailLayout.error = "Email field is required"
+                binding.emailLayout.error = getString(R.string.txt_error_email)
             }
             binding.txtPassword.text?.trim().toString().isEmpty() -> {
-                binding.passwordLayout.error = "Password field is required"
+                binding.passwordLayout.error = getString(R.string.txt_error_password)
             }
             else -> {
                 viewModel.loginUser(binding.txtEmail.text.toString().trim(), binding.txtPassword.text.toString().trim())

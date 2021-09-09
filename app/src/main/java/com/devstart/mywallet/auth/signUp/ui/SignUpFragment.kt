@@ -49,16 +49,16 @@ class SignUpFragment : Fragment() {
 
         when {
             firstname.isEmpty() -> {
-                binding.firstName.error = "First name is required"
+                binding.firstName.error = getString(R.string.txt_error_first_name)
             }
             lastname.isEmpty() -> {
-                binding.txtLastName.error = "Last name is required"
+                binding.txtLastName.error = getString(R.string.txt_error_last_name)
             }
             email.isEmpty() -> {
-                binding.txtEmail.error = "Email is required"
+                binding.txtEmail.error = getString(R.string.txt_error_email)
             }
             password.isEmpty() -> {
-                binding.txtPassword.error = "Password is required"
+                binding.txtPassword.error = getString(R.string.txt_error_password)
             }
 
             else -> {
@@ -66,8 +66,8 @@ class SignUpFragment : Fragment() {
                     viewModel.signUp(firstname, lastname, email, password)
                     observeSignUpResponse()
                 }else {
-                    binding.txtPassword.error = "Password do not match"
-                    binding.txtPasswordConfirm.error = "Password do not match"
+                    binding.txtPassword.error = getString(R.string.txt_error_password_match)
+                    binding.txtPasswordConfirm.error = getString(R.string.txt_error_password_match)
                 }
             }
         }
