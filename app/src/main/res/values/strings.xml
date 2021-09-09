@@ -9,6 +9,7 @@
     <string name="enter_last_name">Enter Last Name</string>
     <string name="enter_email">Enter Email</string>
     <string name="enter_password">Enter Password</string>
+    <string name="wrong_password">Wring password!</string>
     <string name="confirm_password">Confirm password</string>
     <string name="submit">Submit</string>
     <string name="welcome">Welcome</string>

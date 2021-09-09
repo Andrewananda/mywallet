@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.devstart.mywallet.R
@@ -15,6 +16,8 @@ import com.devstart.mywallet.data.Success
 import com.devstart.mywallet.data.model.Transaction
 import com.devstart.mywallet.databinding.FragmentDashboardBinding
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -23,6 +26,8 @@ class DashboardFragment : Fragment() {
     private lateinit var binding: FragmentDashboardBinding
     @Inject
     lateinit var viewModel: TransactionViewModel
+
+    private val sharedViewModel : SharedViewModel by activityViewModels()
     private lateinit var adapter: TransactionsAdapter
 
     override fun onCreateView(
@@ -42,10 +47,15 @@ class DashboardFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnShowBalance.setOnClickListener {
-//            binding.txtBalance.visibility = View.VISIBLE
-//            binding.btnShowBalance.visibility = View.GONE
             findNavController().navigate(R.id.action_dashboardFragment_to_passwordFragment)
         }
+
+        sharedViewModel.showPassword.observe(viewLifecycleOwner, Observer {
+            if (it){
+                binding.txtBalance.visibility = View.VISIBLE
+                binding.btnShowBalance.visibility = View.GONE
+            }
+        })
     }
 
     private fun observeUserTransactions() {

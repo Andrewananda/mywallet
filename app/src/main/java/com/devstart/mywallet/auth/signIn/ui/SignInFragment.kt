@@ -18,6 +18,7 @@ import com.devstart.mywallet.data.model.User
 import com.devstart.mywallet.databinding.FragmentSignInBinding
 import com.devstart.mywallet.databinding.FragmentSignUpBinding
 import com.devstart.mywallet.prefs
+import com.google.gson.Gson
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -76,7 +77,9 @@ class SignInFragment : Fragment() {
     }
 
     private fun logSuccess(data: User) {
-        prefs.userPref = data.toString()
+        val gson = Gson()
+        val user : String = gson.toJson(data)
+        prefs.userPref = user
         findNavController().navigate(R.id.action_signInFragment_to_dashboardFragment)
     }
 }
