@@ -53,10 +53,10 @@ class ExpenditureFragment : Fragment() {
 
         when {
             amount.isBlank() -> {
-                binding.amountLayout.error = "Amount field required"
+                binding.amountLayout.error = getString(R.string.amount_required)
             }
             description.isBlank() -> {
-                binding.descriptionLayout.error = "Description field required"
+                binding.descriptionLayout.error = getString(R.string.description_required)
             }
             else -> {
                 viewModel.submitExpenditure(description, amount.toInt())

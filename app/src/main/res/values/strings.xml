@@ -36,4 +36,6 @@
     <string name="add_expenditure">Add Expenditure</string>
     <string name="expenditure">Expenditure</string>
     <string name="enter_expenditure_description">Enter expenditure description</string>
+    <string name="amount_required">Amount field required</string>
+    <string name="description_required">Description field required</string>
 </resources>
