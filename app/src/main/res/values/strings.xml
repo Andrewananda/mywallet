@@ -38,4 +38,7 @@
     <string name="enter_expenditure_description">Enter expenditure description</string>
     <string name="amount_required">Amount field required</string>
     <string name="description_required">Description field required</string>
+    <string name="income">Income</string>
+    <string name="add_income">Add Income</string>
+    <string name="enter_income_description">Enter income description</string>
 </resources>

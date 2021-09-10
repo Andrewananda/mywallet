@@ -12,6 +12,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import com.devstart.mywallet.auth.signIn.viewModel.SignInViewModel
 import com.devstart.mywallet.auth.signUp.viewModel.SignUpViewModel
 import com.devstart.mywallet.data.Failure
@@ -30,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 
         val navHost = supportFragmentManager.findFragmentById(R.id.nav_host) as NavHostFragment
         val navController = navHost.navController
-        findViewById<BottomNavigationView>(R.id.bottom_nav)
+        findViewById<BottomNavigationView>(R.id.bottom_nav).setupWithNavController(navController)
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             val appBar: ActionBar? = supportActionBar;
@@ -52,7 +53,9 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        val actionBarConfig = AppBarConfiguration(setOf(R.id.dashboardFragment, R.id.signInFragment, R.id.signUpFragment))
+        val actionBarConfig = AppBarConfiguration(setOf(R.id.dashboardFragment,
+            R.id.incomeFragment,
+            R.id.signInFragment, R.id.signUpFragment))
         setupActionBarWithNavController(navController, actionBarConfig)
     }
 
