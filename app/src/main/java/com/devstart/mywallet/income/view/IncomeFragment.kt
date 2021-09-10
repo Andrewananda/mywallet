@@ -6,15 +6,28 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.devstart.mywallet.R
+import com.devstart.mywallet.databinding.FragmentIncomeBinding
+import com.devstart.mywallet.income.viewModel.IncomeViewModel
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class IncomeFragment : Fragment() {
+
+    private lateinit var binding: FragmentIncomeBinding
+    @Inject
+    lateinit var viewModel: IncomeViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_income, container, false)
+        binding = FragmentIncomeBinding.inflate(layoutInflater, container, false)
+        return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+    }
 }
