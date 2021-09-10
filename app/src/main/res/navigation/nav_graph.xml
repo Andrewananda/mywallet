@@ -85,5 +85,14 @@
         android:id="@+id/incomeFragment"
         android:name="com.devstart.mywallet.income.view.IncomeFragment"
         android:label=""
-        tools:layout="@layout/fragment_income" />
+        tools:layout="@layout/fragment_income" >
+        <action
+            android:id="@+id/action_incomeFragment_to_addIncomeFragment"
+            app:destination="@id/addIncomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addIncomeFragment"
+        android:name="com.devstart.mywallet.income.view.AddIncomeFragment"
+        android:label=""
+        tools:layout="@layout/fragment_add_income" />
 </navigation>

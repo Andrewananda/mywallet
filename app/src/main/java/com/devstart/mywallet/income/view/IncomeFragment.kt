@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.devstart.mywallet.R
 import com.devstart.mywallet.data.Failure
 import com.devstart.mywallet.data.Success
@@ -41,6 +42,11 @@ class IncomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel.fetchIncomeList()
         observeIncomeListResponse()
+
+        binding.fab.setOnClickListener {
+           // findNavController().navigate(R.id.action_incomeFragment_to_addIncomeFragment)
+            AddIncomeFragment().show(childFragmentManager, AddIncomeFragment.TAG)
+        }
     }
 
     private fun observeIncomeListResponse() {
