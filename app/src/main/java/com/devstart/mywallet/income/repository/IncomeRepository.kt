@@ -23,4 +23,13 @@ class IncomeRepository @Inject constructor(private val incomeDao: IncomeDao) {
             emit(Failure(e))
         }
     }
+
+    fun fetchIncomeList() = flow<Response> {
+        val incomeList = incomeDao.fetchAllIncomes()
+        try {
+            emit(Success(incomeList))
+        }catch (e: Throwable) {
+            emit(Failure(e))
+        }
+    }
 }

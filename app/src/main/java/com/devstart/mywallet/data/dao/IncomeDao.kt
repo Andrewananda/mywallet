@@ -14,6 +14,9 @@ interface IncomeDao {
     @Update
     fun update(income: Income)
 
-    @Query("SELECT * FROM incomes ORDER BY ID DESC LIMIT 1")
+    @Query("SELECT * FROM incomes ORDER BY id DESC LIMIT 1")
     fun getLastIncome() : Income
+
+    @Query("SELECT * FROM incomes ORDER BY id DESC")
+    fun fetchAllIncomes() : List<Income>
 }

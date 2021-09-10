@@ -8,11 +8,8 @@ import androidx.lifecycle.ViewModel
 import com.devstart.mywallet.data.Response
 import com.devstart.mywallet.data.model.Income
 import com.devstart.mywallet.income.repository.IncomeRepository
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.launch
 import java.time.LocalDateTime
 import javax.inject.Inject
 import kotlin.properties.Delegates
@@ -22,6 +19,9 @@ class IncomeViewModel @Inject constructor(private val incomeRepository: IncomeRe
 
     private var mutableIncome = MutableLiveData<Response>()
     fun getIncomeResponse() : LiveData<Response> = mutableIncome
+
+    private var mutableIncomeList = MutableLiveData<Response>()
+    fun incomeListResponse() : LiveData<Response> = mutableIncomeList
 
     private val coroutineScope = CoroutineScope(Dispatchers.IO + SupervisorJob())
 
@@ -47,5 +47,18 @@ class IncomeViewModel @Inject constructor(private val incomeRepository: IncomeRe
                 mutableIncome.postValue(it)
             }
         }
+    }
+
+    fun fetchIncomeList() {
+        coroutineScope.launch {
+            incomeRepository.fetchIncomeList().collect {
+                mutableIncomeList.postValue(it)
+            }
+        }
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        coroutineScope.cancel()
     }
 }
