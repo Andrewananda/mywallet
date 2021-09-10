@@ -10,9 +10,13 @@ import javax.inject.Inject
 
 class IncomeRepository @Inject constructor(private val incomeDao: IncomeDao) {
 
-    suspend fun getLastIncomeTransaction() = flow<Income> {
+    suspend fun getLastIncomeTransaction() = flow {
         val data =  incomeDao.getLastIncome()
-        emit(data)
+        try {
+            emit(Success(data))
+        }catch (e: Throwable) {
+            emit(Failure(e))
+        }
     }
 
     fun insertIncome(income: Income) = flow<Response> {

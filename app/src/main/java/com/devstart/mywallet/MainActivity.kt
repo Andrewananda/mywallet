@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
                     appBar?.elevation = 0F
                     appBar?.show()
                 }else{
-                    appBar?.hide()
+                    appBar?.show()
                 }
                 findViewById<BottomNavigationView>(R.id.bottom_nav).visibility = View.VISIBLE
             }
