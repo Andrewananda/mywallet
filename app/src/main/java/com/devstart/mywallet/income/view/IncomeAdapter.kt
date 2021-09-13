@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.devstart.mywallet.data.model.Income
 import com.devstart.mywallet.databinding.IncomeItemBinding
+import com.devstart.mywallet.utils.numberFormat
 
 class IncomeAdapter : ListAdapter<Income, IncomeAdapter.IncomeViewHolder>(IncomeDiffUtil) {
 
@@ -15,7 +16,7 @@ class IncomeAdapter : ListAdapter<Income, IncomeAdapter.IncomeViewHolder>(Income
         @SuppressLint("SetTextI18n")
         fun bind(item : Income) {
             binding.date.text = item.date
-            binding.amount.text = "Kes " + item.amount.toString()
+            binding.amount.text = "Kes " + numberFormat(item.amount.toDouble())
             binding.description.text = item.name
         }
     }
