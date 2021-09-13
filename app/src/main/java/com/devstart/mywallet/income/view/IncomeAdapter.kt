@@ -1,5 +1,6 @@
 package com.devstart.mywallet.income.view
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -11,9 +12,10 @@ import com.devstart.mywallet.databinding.IncomeItemBinding
 class IncomeAdapter : ListAdapter<Income, IncomeAdapter.IncomeViewHolder>(IncomeDiffUtil) {
 
     inner class IncomeViewHolder(private val binding: IncomeItemBinding) : RecyclerView.ViewHolder(binding.root) {
+        @SuppressLint("SetTextI18n")
         fun bind(item : Income) {
             binding.date.text = item.date
-            binding.amount.text = item.amount.toString()
+            binding.amount.text = "Kes " + item.amount.toString()
             binding.description.text = item.name
         }
     }

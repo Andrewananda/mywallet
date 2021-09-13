@@ -41,4 +41,7 @@
     <string name="income">Income</string>
     <string name="add_income">Add Income</string>
     <string name="enter_income_description">Enter income description</string>
+    <string name="kes_10000">Kes 10000</string>
+    <string name="house_shopping">House Shopping</string>
+    <string name="kes">Kes </string>
 </resources>
